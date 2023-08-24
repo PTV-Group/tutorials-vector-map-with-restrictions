@@ -32,19 +32,9 @@ var vectorLayer = L.maplibreGL({
   }
 }).addTo(map);
 
-map.createPane('areaTiles');
-map.getPane('areaTiles').style.zIndex = 400;
-var rasterTileUrl = "https://api.myptv.com/rastermaps/v1/data-tiles/{z}/{x}/{y}";
-var lowEmissionZonesLayer = L.tileLayer.ptvDeveloper(
-    rasterTileUrl + '?layers={layers}&apiKey=' + api_key, {
-    layers: 'lowEmissionZones',
-    maxZoom: 18,
-    opacity: 0.5,
-    pane: 'areaTiles'
-  }).addTo(map);
-
 map.createPane('clickableTiles');
 map.getPane('clickableTiles').style.zIndex = 500;
+var rasterTileUrl = "https://api.myptv.com/rastermaps/v1/data-tiles/{z}/{x}/{y}";
 var restrictionsLayer = L.tileLayer.ptvDeveloper(
     rasterTileUrl + '?layers={layers}&apiKey=' + api_key, {
     layers: 'restrictions',
@@ -56,7 +46,7 @@ var restrictionsLayer = L.tileLayer.ptvDeveloper(
 var layers = {
     "Vector Base Map":  vectorLayer,
     "Restrictions": restrictionsLayer,
-    "Low Emission Zones": lowEmissionZonesLayer
+  
 };
 L.control.layers({}, layers, {
     position: 'bottomleft',
