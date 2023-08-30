@@ -1,3 +1,4 @@
+const api_key = "YOUR_API_KEY";
 
 var coordinate = L.latLng(49.012, 8.4044); 
 var map = L.map('map', {
