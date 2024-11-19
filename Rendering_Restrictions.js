@@ -15,7 +15,7 @@ maplibregl.setRTLTextPlugin(
 );
 
 var vectorLayer = L.maplibreGL({
-  attribution: '&copy; ' + new Date().getFullYear() + ' PTV Group, HERE',
+  attribution: '&copy; ' + new Date().getFullYear() + ' PTV Logistics, HERE',
   interactive:false,
   maxZoom: 18,
   style: vectorStyleUrl,
